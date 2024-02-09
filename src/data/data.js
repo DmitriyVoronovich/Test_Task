@@ -9,3 +9,9 @@ export const dataWithMatches = [
     {id: 5, comOne: 'Авнгард', comTwo: 'Спартак', date: '15 февраля', time: '16:30', logoOne: rouen, logoTwo: monaco, sport: 'Хоккей', league: 'Чемпионат КХЛ'},
     {id: 6, comOne: 'Нью-ДжерсиДевилз', comTwo: 'Калгари Флэймз', date: '16 февраля', time: '3:08', logoOne: rouen, logoTwo: monaco, sport: 'Хоккей', league: 'НХЛ'},
 ]
+
+export const dataWithInputElement = [
+    {id: 'comonOne', value: 'На победу хозяев', htmlFor: 'comonOne'},
+    {id: 'draw', value: 'На ничью', htmlFor: 'draw'},
+    {id: 'comonTwo', value: 'На победу гостей', htmlFor: 'comonTwo'}
+]

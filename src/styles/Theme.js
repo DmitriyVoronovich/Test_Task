@@ -15,6 +15,7 @@ export const Theme = {
     },
 
     frontSize: {
-        main: 'font-size: calc((100vw - 360px) / (1445 - 360) * (16 - 12) + 12px)'
+        main: 'calc((100vw - 360px) / (1445 - 360) * (16 - 12) + 12px)',
+        small: 'calc((100vw - 360px) / (1445 - 360) * (14 - 12) + 12px)'
     }
 }

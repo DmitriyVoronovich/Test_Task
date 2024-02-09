@@ -12,7 +12,7 @@ export const Main = (props) => {
             <Container>
                 {props.login && <Login closeLoginForm={props.closeLoginForm}/>}
                 {dataWithMatches.map((item) => {
-                    return (<Schedule key={item.id} data={item}/>)
+                    return (<Schedule key={item.id} data={item} />)
                 })}
             </Container>
         </MainSection>

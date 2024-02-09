@@ -2,33 +2,39 @@ import React from 'react';
 import styled from "styled-components";
 import {Theme} from "../../../../styles/Theme";
 import sport from "../../../../assets/image/sport1.jpg"
+import {useNavigate} from "react-router-dom";
 
 export const Schedule = (props) => {
-    const {comOne, comTwo, date, time, logoOne, logoTwo, sport, league} = props.data
+    const {id, comOne, comTwo, date, time, sport, league} = props.data
+    const navigate = useNavigate(); // Get the navigate function
+
+    const selectEvent = (id) => {
+        navigate('/' + id); // Use navigate to change the route
+    }
 
     return (
-        <EventContainer>
-                <SportContainer>
-                    <SportTitle>{sport}</SportTitle>
-                    <LeagueTitle>{league}</LeagueTitle>
-                </SportContainer>
-                <MatchContainer>
-                    <PlayersContainer>
-                        <PlayersName>{comOne}</PlayersName>
-                    </PlayersContainer>
-                    <DateContainer>
-                        <Data>{date}</Data>
-                        <Time>{time}</Time>
-                    </DateContainer>
-                    <PlayersContainer>
-                        <PlayersName>{comTwo}</PlayersName>
-                    </PlayersContainer>
-                </MatchContainer>
-        </EventContainer>
+        <ScheduleContainer onClick={() => selectEvent(id)}>
+                <SportScheduleContainer>
+                    <SportScheduleTitle>{sport}</SportScheduleTitle>
+                    <LeagueScheduleTitle>{league}</LeagueScheduleTitle>
+                </SportScheduleContainer>
+                <MatchScheduleContainer>
+                    <PlayersScheduleContainer>
+                        <PlayersScheduleName>{comOne}</PlayersScheduleName>
+                    </PlayersScheduleContainer>
+                    <DateScheduleContainer>
+                        <DataSchedule>{date}</DataSchedule>
+                        <TimeSchedule>{time}</TimeSchedule>
+                    </DateScheduleContainer>
+                    <PlayersScheduleContainer>
+                        <PlayersScheduleName>{comTwo}</PlayersScheduleName>
+                    </PlayersScheduleContainer>
+                </MatchScheduleContainer>
+        </ScheduleContainer>
     );
 };
 
-const EventContainer = styled.div`
+const ScheduleContainer = styled.div`
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -58,7 +64,7 @@ const EventContainer = styled.div`
     }
 `
 
-const SportContainer = styled.div`
+const SportScheduleContainer = styled.div`
     width: 100%;
     display: flex;
     gap: 10px;
@@ -66,7 +72,7 @@ const SportContainer = styled.div`
     z-index: 1;
 `
 
-const SportTitle = styled.h5`
+const SportScheduleTitle = styled.h5`
     margin: 0;
     background-color: ${Theme.colors.primaryBg};
     text-transform: uppercase;
@@ -78,7 +84,7 @@ const SportTitle = styled.h5`
     border-radius: 5px;
 `
 
-const LeagueTitle = styled.span`
+const LeagueScheduleTitle = styled.span`
     margin: 0;
     text-transform: capitalize;
     font-size: 10px;
@@ -88,14 +94,14 @@ const LeagueTitle = styled.span`
     color: ${Theme.colors.secondaryFont};
 `
 
-const MatchContainer = styled.div`
+const MatchScheduleContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
     z-index: 1;
 `
 
-const PlayersContainer = styled.div`
+const PlayersScheduleContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -103,7 +109,7 @@ const PlayersContainer = styled.div`
     gap: 10px;
 `
 
-const PlayersName = styled.h4`
+const PlayersScheduleName = styled.h4`
     margin: 0;
     text-transform: capitalize;
     font-size: ${Theme.frontSize.main};
@@ -114,14 +120,14 @@ const PlayersName = styled.h4`
     border-radius: 5px;
 `
 
-const DateContainer = styled.div`
+const DateScheduleContainer = styled.div`
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 
-const Data = styled.span`
+const DataSchedule = styled.span`
     margin: 0;
     text-transform: uppercase;
     font-size: calc((100vw - 360px) / (1445 - 360) * (18 - 14) + 14px);
@@ -132,7 +138,7 @@ const Data = styled.span`
     color: ${Theme.colors.secondaryFont};
 `
 
-const Time = styled.span`
+const TimeSchedule = styled.span`
     margin: 0;
     text-transform: capitalize;
     font-size: ${Theme.frontSize.main};

@@ -20,7 +20,7 @@ const HeaderContainer = styled.header`
     background-color: ${Theme.colors.secondaryBg};
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-bidween;
     align-items: center;
 `
 const JoinContainer = styled.button`

@@ -55,7 +55,7 @@ const Age = styled.div`
 
 const AgeText = styled.p`
     text-transform: capitalize;
-    font-size: ${Theme.frontSize.main};
+    font-size: ${Theme.frontSize.small};
     font-style: normal;
     line-height: normal;
     color: ${Theme.colors.footerFont};
@@ -63,7 +63,7 @@ const AgeText = styled.p`
 
 const Text = styled.p`
     text-transform: capitalize;
-    font-size: calc((100vw - 360px) / (1445 - 360) * (14 - 12) + 12px);
+    font-size: ${Theme.frontSize.small};
     font-style: normal;
     line-height: normal;
     color: ${Theme.colors.footerFont};
