@@ -5,7 +5,7 @@ import { S } from './Header_Styles';
 export const Header = ({ userName, openLoginForm, removeUser }) => (
   <S.HeaderContainer>
     <Logo />
-    {!userName.name.length ? (
+    {!!userName.name.length ? (
       <div>
         <S.UserName>{userName.name}</S.UserName>
         <S.ExitButton onClick={removeUser}>Выйти</S.ExitButton>
