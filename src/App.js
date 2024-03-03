@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import { Event } from './layout/sections/event/Event';
 
 const EMPTY_USER = { name: '', password: '' };
-
 const POPUP_TIMEOUT = 4000;
 
 function App() {
